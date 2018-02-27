@@ -290,7 +290,7 @@ static double tsp_prog_dyn(point *V,int n, int *Q){
 
   for(int i=0; i<n; ++i)
     Q[i] = i;
-  while(first_flip(V, n, Q)){
+  while(first_flip(V, n, Q)>0){
     drawTour(V,n,Q);
   }
   free(checked);
