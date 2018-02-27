@@ -290,9 +290,7 @@ static double tsp_prog_dyn(point *V,int n, int *Q){
 
   for(int i=0; i<n; ++i)
     Q[i] = i;
-  printf("coucou 1\n");
   while(first_flip(V, n, Q)){
-  printf("coucou 2\n");
     drawTour(V,n,Q);
   }
   return value(V, n, Q);
@@ -309,7 +307,7 @@ int main(int argc, char *argv[]) {
 	bool need_redraw = true;
 	bool wait_event = true;
 
-	int n = 35;
+	int n = 50;
 	point *V = generatePoints(n, width, height);
 	int *P = malloc(n * sizeof(int));
 	for(int i = 0; i < n; i++) P[i] = i; // première permutation
