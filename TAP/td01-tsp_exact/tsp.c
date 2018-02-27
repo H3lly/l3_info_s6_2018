@@ -258,7 +258,7 @@ static int first_flip(point *V, int n, int *P){
         int tmp = P[i+1];
         P[i+1] = P[j];
         P[j] = tmp;
-        return gain
+        return gain;
       }
     }
   }
@@ -270,15 +270,15 @@ static double tsp_prog_dyn(point *V,int n, int *Q){
   for(int i=0; i<n; ++i)
     checked[i] = 0;
   for(int i=0; i<n; ++i){
-    double tmp = -1.0;
+    double res = -1.0;
     int indice = 0;
     for (int j=0; j<n; j++){
-      if(i!=j && chacked[j]==0){
+      if(i!=j && checked[j]==0){
         point father = V[Q[i]];
         point current = V[Q[j]];
-        double dist = dist(father, current);
-        if(res==-1.0||dist<res){
-          res=dist;
+        double d = dist(father, current);
+        if(res==-1.0||d<res){
+          res=d;
           indice=i;
         }
       }
@@ -291,7 +291,7 @@ static double tsp_prog_dyn(point *V,int n, int *Q){
   for(int i=0; i<n; ++i)
     Q[i] = i;
   while(first_flip(V, n, Q)){
-    draw_tour(V,n,Q);
+    drawTour(V,n,Q);
     return value(V, n, Q);
   }
 }
