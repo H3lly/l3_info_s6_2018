@@ -286,7 +286,8 @@ static double tsp_prog_dyn(point *V,int n, int *Q){
     checked[i] = 1;
     if(i!=(n-1))
       Q[i] = indice;
-    Q[n-1] = 0;
+    else
+      Q[n-1] = 0;
   }
 
   for(int i=0; i<n; ++i)
