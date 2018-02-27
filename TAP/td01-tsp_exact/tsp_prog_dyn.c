@@ -83,7 +83,53 @@ int ExtractPath(cell **D, int t, int S, int n, int *Q){
 //  }
 //int *tmp = malloc(sizeof(int)*(n-1)*pow(2,n-1));
 
-static double tsp_prog_dyn(point *V, int n, int *Q){
+static double tsp_prog_dyn(point *V,int n, int *Q){
+  int *checked = malloc(n*sizeof(int));
+  for(int i=0; i<n; ++i)
+    checked[i] = 0;
+  for(int i=0; i<n; ++i){
+    double tmp = -1.0;
+    int indice = 0;
+    for (int j=0; j<n; j++){
+      if(i!=j && chacked[j]==0){
+        point father = V[Q[i]];
+        point current = V[Q[j]];
+        double dist = dist(father, current);
+        if(res==-1.0||dist<res){
+          res=dist;
+          indice=i;
+        }
+      }
+    }
+    checked[i] = 1;
+    if(i!=(n-1))
+      Q[i] = indice;
+  }
+
+  for(int i=0; i<n; ++i)
+    Q[i] = i;
+  while(first_flip(V, n, Q)){
+    draw_tour(V,n,Q);
+    return value(V, n, Q);
+  }
+}
+
+static int first_flip(point *V, int n, int *P){
+  for(int i=0; i<n; ++i){
+    for(int j=i+2; j<n; ++j){
+      double gain = ( dist(V[P[i]], V[P[j]])+dist(V[P[i+1]], V[P[(j+1)%n]]) ) - ( dist(V[P[i]], V[P[i+1]])+dist(V[P[j]], V[P[(j+1)%n]]));
+      if(gain<0){
+        int tmp = P[i+1];
+        P[i+1] = P[j];
+        P[j] = tmp;
+        return gain
+      }
+    }
+  }
+  return 0;
+}
+
+static double old_tsp_prog_dyn(point *V, int n, int *Q){
   
   
   /*
