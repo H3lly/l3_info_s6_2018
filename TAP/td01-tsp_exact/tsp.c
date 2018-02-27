@@ -290,10 +290,12 @@ static double tsp_prog_dyn(point *V,int n, int *Q){
 
   for(int i=0; i<n; ++i)
     Q[i] = i;
+  printf("coucou 1\n");
   while(first_flip(V, n, Q)){
+  printf("coucou 2\n");
     drawTour(V,n,Q);
-    return value(V, n, Q);
   }
+  return value(V, n, Q);
 }
 
 // --------------------------------------------
