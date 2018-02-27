@@ -1,0 +1,15 @@
+%{
+%}
+
+%s Q0 Q1
+
+%%
+[0-9]    {return 0;}
+[0-9]^   {fprintf "%s\n", yytext;}
+%%
+
+int main(){
+int c;
+while (c=yylex())!='\n'){
+printf"%d\n", c);
+}
