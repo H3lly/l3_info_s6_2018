@@ -307,7 +307,7 @@ int main(int argc, char *argv[]) {
 	bool need_redraw = true;
 	bool wait_event = true;
 
-	int n = 50;
+	int n = 5;
 	point *V = generatePoints(n, width, height);
 	int *P = malloc(n * sizeof(int));
 	for(int i = 0; i < n; i++) P[i] = i; // première permutation
