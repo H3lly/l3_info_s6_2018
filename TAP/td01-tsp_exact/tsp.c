@@ -328,25 +328,25 @@ int main(int argc, char *argv[]) {
 	}*/
 
 	{
-	  /*
+	  
 	    TopChrono(1); // départ du chrono 1
 	    double w = tsp_brute_force_opt(V,n,P);
 	    char *s = TopChrono(1); // s=durée
 	    printf("value: %g\n",w);
 	    printf("runing time: %s\n",s);
 	    drawTour(V, -n, P); // dessine la tournée
-	  */
+	  
 	}
 
 	{
-	  
+	  /*
 	    TopChrono(1); // départ du chrono 1
 	    double w = tsp_prog_dyn(V,n,P);
 	    char *s = TopChrono(1); // s=durée
 	    printf("value: %g\n",w);
 	    printf("runing time: %s\n",s);
 	    drawTour(V, -n, P); // dessine la tournée
-	  
+	  */
   }
 
 	// Affiche le résultat et attend (q pour sortir)
