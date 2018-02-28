@@ -12,6 +12,8 @@ entier [0-9]+
 . {return (int)yytext[0];}
 %%
 
+
+
 int main(){
 	int c;
 	while((c=yylex())!='\n') printf("%d\n", c);
