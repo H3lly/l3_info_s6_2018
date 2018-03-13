@@ -50,7 +50,7 @@ expression:
 	;
 
 %%
-#include "lex.yy.c"
+#include "exo4.1.init.h"
 
 int yyerror(char *s){
   fprintf( stderr, "*** ERROR: %s\n", s );
