@@ -1,18 +1,4 @@
-État 18 conflits: 6 décalage/réduction
-État 20 conflits: 12 décalage/réduction
-État 37 conflits: 6 décalage/réduction
-État 38 conflits: 6 décalage/réduction
-État 39 conflits: 6 décalage/réduction
-État 40 conflits: 6 décalage/réduction
-État 41 conflits: 6 décalage/réduction
-État 42 conflits: 6 décalage/réduction
-État 43 conflits: 1 décalage/réduction
-État 44 conflits: 12 décalage/réduction
-État 45 conflits: 12 décalage/réduction
-État 46 conflits: 12 décalage/réduction
-État 47 conflits: 12 décalage/réduction
-État 48 conflits: 12 décalage/réduction
-État 49 conflits: 12 décalage/réduction
+État 49 conflits: 1 décalage/réduction
 
 
 Grammaire
@@ -58,24 +44,24 @@ TIMES (260) 12
 DIV (261) 13
 OR (262) 14
 AND (263) 15
-LPAR (264) 24
-RPAR (265) 24
-IDENTIFIER (266) 4 8
-AFF (267) 4
-SEMICOLON (268) 4
-IF (269) 5 6
-THEN (270) 5 6
-ELSE (271) 6
-WHILE (272) 7
-DO (273) 7
-INTEGER (274) 9
-NOT (275) 17
-LT (276) 18
-LE (277) 19
-GT (278) 20
-GE (279) 21
-EQ (280) 22
-DIFF (281) 23
+LT (264) 18
+LE (265) 19
+GT (266) 20
+GE (267) 21
+EQ (268) 22
+DIFF (269) 23
+LPAR (270) 24
+RPAR (271) 24
+NOT (272) 17
+IDENTIFIER (273) 4 8
+AFF (274) 4
+SEMICOLON (275) 4
+IF (276) 5 6
+THEN (277) 5 6
+ELSE (278) 6
+WHILE (279) 7
+DO (280) 7
+INTEGER (281) 9
 
 
 Non-terminaux, suivis des règles où ils apparaissent
@@ -144,9 +130,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 13
 
@@ -174,9 +160,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 14
 
@@ -236,9 +222,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 17
 
@@ -266,9 +252,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 18
 
@@ -296,28 +282,14 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 19
 
 
 État 10
-
-    8 expression: IDENTIFIER .
-
-    $défaut  réduction par utilisation de la règle 8 (expression)
-
-
-État 11
-
-    9 expression: INTEGER .
-
-    $défaut  réduction par utilisation de la règle 9 (expression)
-
-
-État 12
 
     8 expression: . IDENTIFIER
     9           | . INTEGER
@@ -340,11 +312,25 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 20
+
+
+État 11
+
+    8 expression: IDENTIFIER .
+
+    $défaut  réduction par utilisation de la règle 8 (expression)
+
+
+État 12
+
+    9 expression: INTEGER .
+
+    $défaut  réduction par utilisation de la règle 9 (expression)
 
 
 État 13
@@ -370,13 +356,13 @@ expression (31)
     DIV    décalage et aller à l'état 24
     OR     décalage et aller à l'état 25
     AND    décalage et aller à l'état 26
-    THEN   décalage et aller à l'état 27
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    LT     décalage et aller à l'état 27
+    LE     décalage et aller à l'état 28
+    GT     décalage et aller à l'état 29
+    GE     décalage et aller à l'état 30
+    EQ     décalage et aller à l'état 31
+    DIFF   décalage et aller à l'état 32
+    THEN   décalage et aller à l'état 33
 
 
 État 14
@@ -401,13 +387,13 @@ expression (31)
     DIV    décalage et aller à l'état 24
     OR     décalage et aller à l'état 25
     AND    décalage et aller à l'état 26
+    LT     décalage et aller à l'état 27
+    LE     décalage et aller à l'état 28
+    GT     décalage et aller à l'état 29
+    GE     décalage et aller à l'état 30
+    EQ     décalage et aller à l'état 31
+    DIFF   décalage et aller à l'état 32
     DO     décalage et aller à l'état 34
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
 
 
 État 15
@@ -446,13 +432,13 @@ expression (31)
     DIV        décalage et aller à l'état 24
     OR         décalage et aller à l'état 25
     AND        décalage et aller à l'état 26
+    LT         décalage et aller à l'état 27
+    LE         décalage et aller à l'état 28
+    GT         décalage et aller à l'état 29
+    GE         décalage et aller à l'état 30
+    EQ         décalage et aller à l'état 31
+    DIFF       décalage et aller à l'état 32
     SEMICOLON  décalage et aller à l'état 35
-    LT         décalage et aller à l'état 28
-    LE         décalage et aller à l'état 29
-    GT         décalage et aller à l'état 30
-    GE         décalage et aller à l'état 31
-    EQ         décalage et aller à l'état 32
-    DIFF       décalage et aller à l'état 33
 
 
 État 18
@@ -463,7 +449,7 @@ expression (31)
    13           | expression . DIV expression
    14           | expression . OR expression
    15           | expression . AND expression
-   16           | MINUS expression .  [PLUS, MINUS, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   16           | MINUS expression .  [PLUS, MINUS, RPAR, SEMICOLON, THEN, DO]
    18           | expression . LT expression
    19           | expression . LE expression
    20           | expression . GT expression
@@ -475,19 +461,13 @@ expression (31)
     DIV    décalage et aller à l'état 24
     OR     décalage et aller à l'état 25
     AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    LT     décalage et aller à l'état 27
+    LE     décalage et aller à l'état 28
+    GT     décalage et aller à l'état 29
+    GE     décalage et aller à l'état 30
+    EQ     décalage et aller à l'état 31
+    DIFF   décalage et aller à l'état 32
 
-    LT        [réduction par utilisation de la règle 16 (expression)]
-    LE        [réduction par utilisation de la règle 16 (expression)]
-    GT        [réduction par utilisation de la règle 16 (expression)]
-    GE        [réduction par utilisation de la règle 16 (expression)]
-    EQ        [réduction par utilisation de la règle 16 (expression)]
-    DIFF      [réduction par utilisation de la règle 16 (expression)]
     $défaut  réduction par utilisation de la règle 16 (expression)
 
     Conflit entre la règle 16 et le jeton PLUS résolu par réduction (%left PLUS).
@@ -496,6 +476,12 @@ expression (31)
     Conflit entre la règle 16 et le jeton DIV résolu par décalage (MINUS < DIV).
     Conflit entre la règle 16 et le jeton OR résolu par décalage (MINUS < OR).
     Conflit entre la règle 16 et le jeton AND résolu par décalage (MINUS < AND).
+    Conflit entre la règle 16 et le jeton LT résolu par décalage (MINUS < LT).
+    Conflit entre la règle 16 et le jeton LE résolu par décalage (MINUS < LE).
+    Conflit entre la règle 16 et le jeton GT résolu par décalage (MINUS < GT).
+    Conflit entre la règle 16 et le jeton GE résolu par décalage (MINUS < GE).
+    Conflit entre la règle 16 et le jeton EQ résolu par décalage (MINUS < EQ).
+    Conflit entre la règle 16 et le jeton DIFF résolu par décalage (MINUS < DIFF).
 
 
 État 19
@@ -520,13 +506,13 @@ expression (31)
     DIV    décalage et aller à l'état 24
     OR     décalage et aller à l'état 25
     AND    décalage et aller à l'état 26
+    LT     décalage et aller à l'état 27
+    LE     décalage et aller à l'état 28
+    GT     décalage et aller à l'état 29
+    GE     décalage et aller à l'état 30
+    EQ     décalage et aller à l'état 31
+    DIFF   décalage et aller à l'état 32
     RPAR   décalage et aller à l'état 36
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
 
 
 État 20
@@ -537,7 +523,7 @@ expression (31)
    13           | expression . DIV expression
    14           | expression . OR expression
    15           | expression . AND expression
-   17           | NOT expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   17           | NOT expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
    18           | expression . LT expression
    19           | expression . LE expression
    20           | expression . GT expression
@@ -545,32 +531,20 @@ expression (31)
    22           | expression . EQ expression
    23           | expression . DIFF expression
 
-    PLUS   décalage et aller à l'état 21
-    MINUS  décalage et aller à l'état 22
-    TIMES  décalage et aller à l'état 23
-    DIV    décalage et aller à l'état 24
-    OR     décalage et aller à l'état 25
-    AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
-
-    PLUS      [réduction par utilisation de la règle 17 (expression)]
-    MINUS     [réduction par utilisation de la règle 17 (expression)]
-    TIMES     [réduction par utilisation de la règle 17 (expression)]
-    DIV       [réduction par utilisation de la règle 17 (expression)]
-    OR        [réduction par utilisation de la règle 17 (expression)]
-    AND       [réduction par utilisation de la règle 17 (expression)]
-    LT        [réduction par utilisation de la règle 17 (expression)]
-    LE        [réduction par utilisation de la règle 17 (expression)]
-    GT        [réduction par utilisation de la règle 17 (expression)]
-    GE        [réduction par utilisation de la règle 17 (expression)]
-    EQ        [réduction par utilisation de la règle 17 (expression)]
-    DIFF      [réduction par utilisation de la règle 17 (expression)]
     $défaut  réduction par utilisation de la règle 17 (expression)
+
+    Conflit entre la règle 17 et le jeton PLUS résolu par réduction (PLUS < NOT).
+    Conflit entre la règle 17 et le jeton MINUS résolu par réduction (MINUS < NOT).
+    Conflit entre la règle 17 et le jeton TIMES résolu par réduction (TIMES < NOT).
+    Conflit entre la règle 17 et le jeton DIV résolu par réduction (DIV < NOT).
+    Conflit entre la règle 17 et le jeton OR résolu par réduction (OR < NOT).
+    Conflit entre la règle 17 et le jeton AND résolu par réduction (AND < NOT).
+    Conflit entre la règle 17 et le jeton LT résolu par réduction (LT < NOT).
+    Conflit entre la règle 17 et le jeton LE résolu par réduction (LE < NOT).
+    Conflit entre la règle 17 et le jeton GT résolu par réduction (GT < NOT).
+    Conflit entre la règle 17 et le jeton GE résolu par réduction (GE < NOT).
+    Conflit entre la règle 17 et le jeton EQ résolu par réduction (EQ < NOT).
+    Conflit entre la règle 17 et le jeton DIFF résolu par réduction (DIFF < NOT).
 
 
 État 21
@@ -596,9 +570,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 37
 
@@ -626,9 +600,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 38
 
@@ -656,9 +630,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 39
 
@@ -686,9 +660,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 40
 
@@ -716,9 +690,9 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 41
 
@@ -746,30 +720,14 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
     expression  aller à l'état 42
 
 
 État 27
-
-    4 statement: . IDENTIFIER AFF expression SEMICOLON
-    5          | . IF expression THEN statement
-    5          | IF expression THEN . statement
-    6          | . IF expression THEN statement ELSE statement
-    6          | IF expression THEN . statement ELSE statement
-    7          | . WHILE expression DO statement
-
-    IDENTIFIER  décalage et aller à l'état 1
-    IF          décalage et aller à l'état 2
-    WHILE       décalage et aller à l'état 3
-
-    statement  aller à l'état 43
-
-
-État 28
 
     8 expression: . IDENTIFIER
     9           | . INTEGER
@@ -792,14 +750,14 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
-    expression  aller à l'état 44
+    expression  aller à l'état 43
 
 
-État 29
+État 28
 
     8 expression: . IDENTIFIER
     9           | . INTEGER
@@ -822,14 +780,14 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
-    expression  aller à l'état 45
+    expression  aller à l'état 44
 
 
-État 30
+État 29
 
     8 expression: . IDENTIFIER
     9           | . INTEGER
@@ -852,14 +810,14 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
-    expression  aller à l'état 46
+    expression  aller à l'état 45
 
 
-État 31
+État 30
 
     8 expression: . IDENTIFIER
     9           | . INTEGER
@@ -882,14 +840,14 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
-    expression  aller à l'état 47
+    expression  aller à l'état 46
 
 
-État 32
+État 31
 
     8 expression: . IDENTIFIER
     9           | . INTEGER
@@ -912,14 +870,14 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
-    expression  aller à l'état 48
+    expression  aller à l'état 47
 
 
-État 33
+État 32
 
     8 expression: . IDENTIFIER
     9           | . INTEGER
@@ -942,11 +900,27 @@ expression (31)
 
     MINUS       décalage et aller à l'état 8
     LPAR        décalage et aller à l'état 9
-    IDENTIFIER  décalage et aller à l'état 10
-    INTEGER     décalage et aller à l'état 11
-    NOT         décalage et aller à l'état 12
+    NOT         décalage et aller à l'état 10
+    IDENTIFIER  décalage et aller à l'état 11
+    INTEGER     décalage et aller à l'état 12
 
-    expression  aller à l'état 49
+    expression  aller à l'état 48
+
+
+État 33
+
+    4 statement: . IDENTIFIER AFF expression SEMICOLON
+    5          | . IF expression THEN statement
+    5          | IF expression THEN . statement
+    6          | . IF expression THEN statement ELSE statement
+    6          | IF expression THEN . statement ELSE statement
+    7          | . WHILE expression DO statement
+
+    IDENTIFIER  décalage et aller à l'état 1
+    IF          décalage et aller à l'état 2
+    WHILE       décalage et aller à l'état 3
+
+    statement  aller à l'état 49
 
 
 État 34
@@ -981,7 +955,7 @@ expression (31)
 État 37
 
    10 expression: expression . PLUS expression
-   10           | expression PLUS expression .  [PLUS, MINUS, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   10           | expression PLUS expression .  [PLUS, MINUS, RPAR, SEMICOLON, THEN, DO]
    11           | expression . MINUS expression
    12           | expression . TIMES expression
    13           | expression . DIV expression
@@ -998,19 +972,13 @@ expression (31)
     DIV    décalage et aller à l'état 24
     OR     décalage et aller à l'état 25
     AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    LT     décalage et aller à l'état 27
+    LE     décalage et aller à l'état 28
+    GT     décalage et aller à l'état 29
+    GE     décalage et aller à l'état 30
+    EQ     décalage et aller à l'état 31
+    DIFF   décalage et aller à l'état 32
 
-    LT        [réduction par utilisation de la règle 10 (expression)]
-    LE        [réduction par utilisation de la règle 10 (expression)]
-    GT        [réduction par utilisation de la règle 10 (expression)]
-    GE        [réduction par utilisation de la règle 10 (expression)]
-    EQ        [réduction par utilisation de la règle 10 (expression)]
-    DIFF      [réduction par utilisation de la règle 10 (expression)]
     $défaut  réduction par utilisation de la règle 10 (expression)
 
     Conflit entre la règle 10 et le jeton PLUS résolu par réduction (%left PLUS).
@@ -1019,13 +987,19 @@ expression (31)
     Conflit entre la règle 10 et le jeton DIV résolu par décalage (PLUS < DIV).
     Conflit entre la règle 10 et le jeton OR résolu par décalage (PLUS < OR).
     Conflit entre la règle 10 et le jeton AND résolu par décalage (PLUS < AND).
+    Conflit entre la règle 10 et le jeton LT résolu par décalage (PLUS < LT).
+    Conflit entre la règle 10 et le jeton LE résolu par décalage (PLUS < LE).
+    Conflit entre la règle 10 et le jeton GT résolu par décalage (PLUS < GT).
+    Conflit entre la règle 10 et le jeton GE résolu par décalage (PLUS < GE).
+    Conflit entre la règle 10 et le jeton EQ résolu par décalage (PLUS < EQ).
+    Conflit entre la règle 10 et le jeton DIFF résolu par décalage (PLUS < DIFF).
 
 
 État 38
 
    10 expression: expression . PLUS expression
    11           | expression . MINUS expression
-   11           | expression MINUS expression .  [PLUS, MINUS, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   11           | expression MINUS expression .  [PLUS, MINUS, RPAR, SEMICOLON, THEN, DO]
    12           | expression . TIMES expression
    13           | expression . DIV expression
    14           | expression . OR expression
@@ -1041,19 +1015,13 @@ expression (31)
     DIV    décalage et aller à l'état 24
     OR     décalage et aller à l'état 25
     AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    LT     décalage et aller à l'état 27
+    LE     décalage et aller à l'état 28
+    GT     décalage et aller à l'état 29
+    GE     décalage et aller à l'état 30
+    EQ     décalage et aller à l'état 31
+    DIFF   décalage et aller à l'état 32
 
-    LT        [réduction par utilisation de la règle 11 (expression)]
-    LE        [réduction par utilisation de la règle 11 (expression)]
-    GT        [réduction par utilisation de la règle 11 (expression)]
-    GE        [réduction par utilisation de la règle 11 (expression)]
-    EQ        [réduction par utilisation de la règle 11 (expression)]
-    DIFF      [réduction par utilisation de la règle 11 (expression)]
     $défaut  réduction par utilisation de la règle 11 (expression)
 
     Conflit entre la règle 11 et le jeton PLUS résolu par réduction (%left PLUS).
@@ -1062,6 +1030,12 @@ expression (31)
     Conflit entre la règle 11 et le jeton DIV résolu par décalage (MINUS < DIV).
     Conflit entre la règle 11 et le jeton OR résolu par décalage (MINUS < OR).
     Conflit entre la règle 11 et le jeton AND résolu par décalage (MINUS < AND).
+    Conflit entre la règle 11 et le jeton LT résolu par décalage (MINUS < LT).
+    Conflit entre la règle 11 et le jeton LE résolu par décalage (MINUS < LE).
+    Conflit entre la règle 11 et le jeton GT résolu par décalage (MINUS < GT).
+    Conflit entre la règle 11 et le jeton GE résolu par décalage (MINUS < GE).
+    Conflit entre la règle 11 et le jeton EQ résolu par décalage (MINUS < EQ).
+    Conflit entre la règle 11 et le jeton DIFF résolu par décalage (MINUS < DIFF).
 
 
 État 39
@@ -1069,7 +1043,7 @@ expression (31)
    10 expression: expression . PLUS expression
    11           | expression . MINUS expression
    12           | expression . TIMES expression
-   12           | expression TIMES expression .  [PLUS, MINUS, TIMES, DIV, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   12           | expression TIMES expression .  [PLUS, MINUS, TIMES, DIV, RPAR, SEMICOLON, THEN, DO]
    13           | expression . DIV expression
    14           | expression . OR expression
    15           | expression . AND expression
@@ -1082,19 +1056,13 @@ expression (31)
 
     OR    décalage et aller à l'état 25
     AND   décalage et aller à l'état 26
-    LT    décalage et aller à l'état 28
-    LE    décalage et aller à l'état 29
-    GT    décalage et aller à l'état 30
-    GE    décalage et aller à l'état 31
-    EQ    décalage et aller à l'état 32
-    DIFF  décalage et aller à l'état 33
+    LT    décalage et aller à l'état 27
+    LE    décalage et aller à l'état 28
+    GT    décalage et aller à l'état 29
+    GE    décalage et aller à l'état 30
+    EQ    décalage et aller à l'état 31
+    DIFF  décalage et aller à l'état 32
 
-    LT        [réduction par utilisation de la règle 12 (expression)]
-    LE        [réduction par utilisation de la règle 12 (expression)]
-    GT        [réduction par utilisation de la règle 12 (expression)]
-    GE        [réduction par utilisation de la règle 12 (expression)]
-    EQ        [réduction par utilisation de la règle 12 (expression)]
-    DIFF      [réduction par utilisation de la règle 12 (expression)]
     $défaut  réduction par utilisation de la règle 12 (expression)
 
     Conflit entre la règle 12 et le jeton PLUS résolu par réduction (PLUS < TIMES).
@@ -1103,6 +1071,12 @@ expression (31)
     Conflit entre la règle 12 et le jeton DIV résolu par réduction (%left DIV).
     Conflit entre la règle 12 et le jeton OR résolu par décalage (TIMES < OR).
     Conflit entre la règle 12 et le jeton AND résolu par décalage (TIMES < AND).
+    Conflit entre la règle 12 et le jeton LT résolu par décalage (TIMES < LT).
+    Conflit entre la règle 12 et le jeton LE résolu par décalage (TIMES < LE).
+    Conflit entre la règle 12 et le jeton GT résolu par décalage (TIMES < GT).
+    Conflit entre la règle 12 et le jeton GE résolu par décalage (TIMES < GE).
+    Conflit entre la règle 12 et le jeton EQ résolu par décalage (TIMES < EQ).
+    Conflit entre la règle 12 et le jeton DIFF résolu par décalage (TIMES < DIFF).
 
 
 État 40
@@ -1111,7 +1085,7 @@ expression (31)
    11           | expression . MINUS expression
    12           | expression . TIMES expression
    13           | expression . DIV expression
-   13           | expression DIV expression .  [PLUS, MINUS, TIMES, DIV, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   13           | expression DIV expression .  [PLUS, MINUS, TIMES, DIV, RPAR, SEMICOLON, THEN, DO]
    14           | expression . OR expression
    15           | expression . AND expression
    18           | expression . LT expression
@@ -1123,19 +1097,13 @@ expression (31)
 
     OR    décalage et aller à l'état 25
     AND   décalage et aller à l'état 26
-    LT    décalage et aller à l'état 28
-    LE    décalage et aller à l'état 29
-    GT    décalage et aller à l'état 30
-    GE    décalage et aller à l'état 31
-    EQ    décalage et aller à l'état 32
-    DIFF  décalage et aller à l'état 33
+    LT    décalage et aller à l'état 27
+    LE    décalage et aller à l'état 28
+    GT    décalage et aller à l'état 29
+    GE    décalage et aller à l'état 30
+    EQ    décalage et aller à l'état 31
+    DIFF  décalage et aller à l'état 32
 
-    LT        [réduction par utilisation de la règle 13 (expression)]
-    LE        [réduction par utilisation de la règle 13 (expression)]
-    GT        [réduction par utilisation de la règle 13 (expression)]
-    GE        [réduction par utilisation de la règle 13 (expression)]
-    EQ        [réduction par utilisation de la règle 13 (expression)]
-    DIFF      [réduction par utilisation de la règle 13 (expression)]
     $défaut  réduction par utilisation de la règle 13 (expression)
 
     Conflit entre la règle 13 et le jeton PLUS résolu par réduction (PLUS < DIV).
@@ -1144,6 +1112,12 @@ expression (31)
     Conflit entre la règle 13 et le jeton DIV résolu par réduction (%left DIV).
     Conflit entre la règle 13 et le jeton OR résolu par décalage (DIV < OR).
     Conflit entre la règle 13 et le jeton AND résolu par décalage (DIV < AND).
+    Conflit entre la règle 13 et le jeton LT résolu par décalage (DIV < LT).
+    Conflit entre la règle 13 et le jeton LE résolu par décalage (DIV < LE).
+    Conflit entre la règle 13 et le jeton GT résolu par décalage (DIV < GT).
+    Conflit entre la règle 13 et le jeton GE résolu par décalage (DIV < GE).
+    Conflit entre la règle 13 et le jeton EQ résolu par décalage (DIV < EQ).
+    Conflit entre la règle 13 et le jeton DIFF résolu par décalage (DIV < DIFF).
 
 
 État 41
@@ -1153,7 +1127,7 @@ expression (31)
    12           | expression . TIMES expression
    13           | expression . DIV expression
    14           | expression . OR expression
-   14           | expression OR expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   14           | expression OR expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
    15           | expression . AND expression
    18           | expression . LT expression
    19           | expression . LE expression
@@ -1162,19 +1136,6 @@ expression (31)
    22           | expression . EQ expression
    23           | expression . DIFF expression
 
-    LT    décalage et aller à l'état 28
-    LE    décalage et aller à l'état 29
-    GT    décalage et aller à l'état 30
-    GE    décalage et aller à l'état 31
-    EQ    décalage et aller à l'état 32
-    DIFF  décalage et aller à l'état 33
-
-    LT        [réduction par utilisation de la règle 14 (expression)]
-    LE        [réduction par utilisation de la règle 14 (expression)]
-    GT        [réduction par utilisation de la règle 14 (expression)]
-    GE        [réduction par utilisation de la règle 14 (expression)]
-    EQ        [réduction par utilisation de la règle 14 (expression)]
-    DIFF      [réduction par utilisation de la règle 14 (expression)]
     $défaut  réduction par utilisation de la règle 14 (expression)
 
     Conflit entre la règle 14 et le jeton PLUS résolu par réduction (PLUS < OR).
@@ -1183,6 +1144,12 @@ expression (31)
     Conflit entre la règle 14 et le jeton DIV résolu par réduction (DIV < OR).
     Conflit entre la règle 14 et le jeton OR résolu par réduction (%left OR).
     Conflit entre la règle 14 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 14 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 14 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 14 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 14 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 14 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 14 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 42
@@ -1193,7 +1160,7 @@ expression (31)
    13           | expression . DIV expression
    14           | expression . OR expression
    15           | expression . AND expression
-   15           | expression AND expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+   15           | expression AND expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
    18           | expression . LT expression
    19           | expression . LE expression
    20           | expression . GT expression
@@ -1201,19 +1168,6 @@ expression (31)
    22           | expression . EQ expression
    23           | expression . DIFF expression
 
-    LT    décalage et aller à l'état 28
-    LE    décalage et aller à l'état 29
-    GT    décalage et aller à l'état 30
-    GE    décalage et aller à l'état 31
-    EQ    décalage et aller à l'état 32
-    DIFF  décalage et aller à l'état 33
-
-    LT        [réduction par utilisation de la règle 15 (expression)]
-    LE        [réduction par utilisation de la règle 15 (expression)]
-    GT        [réduction par utilisation de la règle 15 (expression)]
-    GE        [réduction par utilisation de la règle 15 (expression)]
-    EQ        [réduction par utilisation de la règle 15 (expression)]
-    DIFF      [réduction par utilisation de la règle 15 (expression)]
     $défaut  réduction par utilisation de la règle 15 (expression)
 
     Conflit entre la règle 15 et le jeton PLUS résolu par réduction (PLUS < AND).
@@ -1222,17 +1176,44 @@ expression (31)
     Conflit entre la règle 15 et le jeton DIV résolu par réduction (DIV < AND).
     Conflit entre la règle 15 et le jeton OR résolu par réduction (%left OR).
     Conflit entre la règle 15 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 15 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 15 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 15 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 15 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 15 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 15 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 43
 
-    5 statement: IF expression THEN statement .  [$end, IDENTIFIER, IF, ELSE, WHILE]
-    6          | IF expression THEN statement . ELSE statement
+   10 expression: expression . PLUS expression
+   11           | expression . MINUS expression
+   12           | expression . TIMES expression
+   13           | expression . DIV expression
+   14           | expression . OR expression
+   15           | expression . AND expression
+   18           | expression . LT expression
+   18           | expression LT expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
+   19           | expression . LE expression
+   20           | expression . GT expression
+   21           | expression . GE expression
+   22           | expression . EQ expression
+   23           | expression . DIFF expression
 
-    ELSE  décalage et aller à l'état 51
+    $défaut  réduction par utilisation de la règle 18 (expression)
 
-    ELSE      [réduction par utilisation de la règle 5 (statement)]
-    $défaut  réduction par utilisation de la règle 5 (statement)
+    Conflit entre la règle 18 et le jeton PLUS résolu par réduction (PLUS < LT).
+    Conflit entre la règle 18 et le jeton MINUS résolu par réduction (MINUS < LT).
+    Conflit entre la règle 18 et le jeton TIMES résolu par réduction (TIMES < LT).
+    Conflit entre la règle 18 et le jeton DIV résolu par réduction (DIV < LT).
+    Conflit entre la règle 18 et le jeton OR résolu par réduction (%left OR).
+    Conflit entre la règle 18 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 18 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 18 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 18 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 18 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 18 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 18 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 44
@@ -1244,39 +1225,27 @@ expression (31)
    14           | expression . OR expression
    15           | expression . AND expression
    18           | expression . LT expression
-   18           | expression LT expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
    19           | expression . LE expression
+   19           | expression LE expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
    20           | expression . GT expression
    21           | expression . GE expression
    22           | expression . EQ expression
    23           | expression . DIFF expression
 
-    PLUS   décalage et aller à l'état 21
-    MINUS  décalage et aller à l'état 22
-    TIMES  décalage et aller à l'état 23
-    DIV    décalage et aller à l'état 24
-    OR     décalage et aller à l'état 25
-    AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    $défaut  réduction par utilisation de la règle 19 (expression)
 
-    PLUS      [réduction par utilisation de la règle 18 (expression)]
-    MINUS     [réduction par utilisation de la règle 18 (expression)]
-    TIMES     [réduction par utilisation de la règle 18 (expression)]
-    DIV       [réduction par utilisation de la règle 18 (expression)]
-    OR        [réduction par utilisation de la règle 18 (expression)]
-    AND       [réduction par utilisation de la règle 18 (expression)]
-    LT        [réduction par utilisation de la règle 18 (expression)]
-    LE        [réduction par utilisation de la règle 18 (expression)]
-    GT        [réduction par utilisation de la règle 18 (expression)]
-    GE        [réduction par utilisation de la règle 18 (expression)]
-    EQ        [réduction par utilisation de la règle 18 (expression)]
-    DIFF      [réduction par utilisation de la règle 18 (expression)]
-    $défaut  réduction par utilisation de la règle 18 (expression)
+    Conflit entre la règle 19 et le jeton PLUS résolu par réduction (PLUS < LE).
+    Conflit entre la règle 19 et le jeton MINUS résolu par réduction (MINUS < LE).
+    Conflit entre la règle 19 et le jeton TIMES résolu par réduction (TIMES < LE).
+    Conflit entre la règle 19 et le jeton DIV résolu par réduction (DIV < LE).
+    Conflit entre la règle 19 et le jeton OR résolu par réduction (%left OR).
+    Conflit entre la règle 19 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 19 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 19 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 19 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 19 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 19 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 19 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 45
@@ -1289,38 +1258,26 @@ expression (31)
    15           | expression . AND expression
    18           | expression . LT expression
    19           | expression . LE expression
-   19           | expression LE expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
    20           | expression . GT expression
+   20           | expression GT expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
    21           | expression . GE expression
    22           | expression . EQ expression
    23           | expression . DIFF expression
 
-    PLUS   décalage et aller à l'état 21
-    MINUS  décalage et aller à l'état 22
-    TIMES  décalage et aller à l'état 23
-    DIV    décalage et aller à l'état 24
-    OR     décalage et aller à l'état 25
-    AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    $défaut  réduction par utilisation de la règle 20 (expression)
 
-    PLUS      [réduction par utilisation de la règle 19 (expression)]
-    MINUS     [réduction par utilisation de la règle 19 (expression)]
-    TIMES     [réduction par utilisation de la règle 19 (expression)]
-    DIV       [réduction par utilisation de la règle 19 (expression)]
-    OR        [réduction par utilisation de la règle 19 (expression)]
-    AND       [réduction par utilisation de la règle 19 (expression)]
-    LT        [réduction par utilisation de la règle 19 (expression)]
-    LE        [réduction par utilisation de la règle 19 (expression)]
-    GT        [réduction par utilisation de la règle 19 (expression)]
-    GE        [réduction par utilisation de la règle 19 (expression)]
-    EQ        [réduction par utilisation de la règle 19 (expression)]
-    DIFF      [réduction par utilisation de la règle 19 (expression)]
-    $défaut  réduction par utilisation de la règle 19 (expression)
+    Conflit entre la règle 20 et le jeton PLUS résolu par réduction (PLUS < GT).
+    Conflit entre la règle 20 et le jeton MINUS résolu par réduction (MINUS < GT).
+    Conflit entre la règle 20 et le jeton TIMES résolu par réduction (TIMES < GT).
+    Conflit entre la règle 20 et le jeton DIV résolu par réduction (DIV < GT).
+    Conflit entre la règle 20 et le jeton OR résolu par réduction (%left OR).
+    Conflit entre la règle 20 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 20 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 20 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 20 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 20 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 20 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 20 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 46
@@ -1334,37 +1291,25 @@ expression (31)
    18           | expression . LT expression
    19           | expression . LE expression
    20           | expression . GT expression
-   20           | expression GT expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
    21           | expression . GE expression
+   21           | expression GE expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
    22           | expression . EQ expression
    23           | expression . DIFF expression
 
-    PLUS   décalage et aller à l'état 21
-    MINUS  décalage et aller à l'état 22
-    TIMES  décalage et aller à l'état 23
-    DIV    décalage et aller à l'état 24
-    OR     décalage et aller à l'état 25
-    AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    $défaut  réduction par utilisation de la règle 21 (expression)
 
-    PLUS      [réduction par utilisation de la règle 20 (expression)]
-    MINUS     [réduction par utilisation de la règle 20 (expression)]
-    TIMES     [réduction par utilisation de la règle 20 (expression)]
-    DIV       [réduction par utilisation de la règle 20 (expression)]
-    OR        [réduction par utilisation de la règle 20 (expression)]
-    AND       [réduction par utilisation de la règle 20 (expression)]
-    LT        [réduction par utilisation de la règle 20 (expression)]
-    LE        [réduction par utilisation de la règle 20 (expression)]
-    GT        [réduction par utilisation de la règle 20 (expression)]
-    GE        [réduction par utilisation de la règle 20 (expression)]
-    EQ        [réduction par utilisation de la règle 20 (expression)]
-    DIFF      [réduction par utilisation de la règle 20 (expression)]
-    $défaut  réduction par utilisation de la règle 20 (expression)
+    Conflit entre la règle 21 et le jeton PLUS résolu par réduction (PLUS < GE).
+    Conflit entre la règle 21 et le jeton MINUS résolu par réduction (MINUS < GE).
+    Conflit entre la règle 21 et le jeton TIMES résolu par réduction (TIMES < GE).
+    Conflit entre la règle 21 et le jeton DIV résolu par réduction (DIV < GE).
+    Conflit entre la règle 21 et le jeton OR résolu par réduction (%left OR).
+    Conflit entre la règle 21 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 21 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 21 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 21 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 21 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 21 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 21 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 47
@@ -1379,36 +1324,24 @@ expression (31)
    19           | expression . LE expression
    20           | expression . GT expression
    21           | expression . GE expression
-   21           | expression GE expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
    22           | expression . EQ expression
+   22           | expression EQ expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
    23           | expression . DIFF expression
 
-    PLUS   décalage et aller à l'état 21
-    MINUS  décalage et aller à l'état 22
-    TIMES  décalage et aller à l'état 23
-    DIV    décalage et aller à l'état 24
-    OR     décalage et aller à l'état 25
-    AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    $défaut  réduction par utilisation de la règle 22 (expression)
 
-    PLUS      [réduction par utilisation de la règle 21 (expression)]
-    MINUS     [réduction par utilisation de la règle 21 (expression)]
-    TIMES     [réduction par utilisation de la règle 21 (expression)]
-    DIV       [réduction par utilisation de la règle 21 (expression)]
-    OR        [réduction par utilisation de la règle 21 (expression)]
-    AND       [réduction par utilisation de la règle 21 (expression)]
-    LT        [réduction par utilisation de la règle 21 (expression)]
-    LE        [réduction par utilisation de la règle 21 (expression)]
-    GT        [réduction par utilisation de la règle 21 (expression)]
-    GE        [réduction par utilisation de la règle 21 (expression)]
-    EQ        [réduction par utilisation de la règle 21 (expression)]
-    DIFF      [réduction par utilisation de la règle 21 (expression)]
-    $défaut  réduction par utilisation de la règle 21 (expression)
+    Conflit entre la règle 22 et le jeton PLUS résolu par réduction (PLUS < EQ).
+    Conflit entre la règle 22 et le jeton MINUS résolu par réduction (MINUS < EQ).
+    Conflit entre la règle 22 et le jeton TIMES résolu par réduction (TIMES < EQ).
+    Conflit entre la règle 22 et le jeton DIV résolu par réduction (DIV < EQ).
+    Conflit entre la règle 22 et le jeton OR résolu par réduction (%left OR).
+    Conflit entre la règle 22 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 22 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 22 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 22 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 22 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 22 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 22 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 48
@@ -1424,79 +1357,34 @@ expression (31)
    20           | expression . GT expression
    21           | expression . GE expression
    22           | expression . EQ expression
-   22           | expression EQ expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
    23           | expression . DIFF expression
+   23           | expression DIFF expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, LT, LE, GT, GE, EQ, DIFF, RPAR, SEMICOLON, THEN, DO]
 
-    PLUS   décalage et aller à l'état 21
-    MINUS  décalage et aller à l'état 22
-    TIMES  décalage et aller à l'état 23
-    DIV    décalage et aller à l'état 24
-    OR     décalage et aller à l'état 25
-    AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    $défaut  réduction par utilisation de la règle 23 (expression)
 
-    PLUS      [réduction par utilisation de la règle 22 (expression)]
-    MINUS     [réduction par utilisation de la règle 22 (expression)]
-    TIMES     [réduction par utilisation de la règle 22 (expression)]
-    DIV       [réduction par utilisation de la règle 22 (expression)]
-    OR        [réduction par utilisation de la règle 22 (expression)]
-    AND       [réduction par utilisation de la règle 22 (expression)]
-    LT        [réduction par utilisation de la règle 22 (expression)]
-    LE        [réduction par utilisation de la règle 22 (expression)]
-    GT        [réduction par utilisation de la règle 22 (expression)]
-    GE        [réduction par utilisation de la règle 22 (expression)]
-    EQ        [réduction par utilisation de la règle 22 (expression)]
-    DIFF      [réduction par utilisation de la règle 22 (expression)]
-    $défaut  réduction par utilisation de la règle 22 (expression)
+    Conflit entre la règle 23 et le jeton PLUS résolu par réduction (PLUS < DIFF).
+    Conflit entre la règle 23 et le jeton MINUS résolu par réduction (MINUS < DIFF).
+    Conflit entre la règle 23 et le jeton TIMES résolu par réduction (TIMES < DIFF).
+    Conflit entre la règle 23 et le jeton DIV résolu par réduction (DIV < DIFF).
+    Conflit entre la règle 23 et le jeton OR résolu par réduction (%left OR).
+    Conflit entre la règle 23 et le jeton AND résolu par réduction (%left AND).
+    Conflit entre la règle 23 et le jeton LT résolu par réduction (%left LT).
+    Conflit entre la règle 23 et le jeton LE résolu par réduction (%left LE).
+    Conflit entre la règle 23 et le jeton GT résolu par réduction (%left GT).
+    Conflit entre la règle 23 et le jeton GE résolu par réduction (%left GE).
+    Conflit entre la règle 23 et le jeton EQ résolu par réduction (%left EQ).
+    Conflit entre la règle 23 et le jeton DIFF résolu par réduction (%left DIFF).
 
 
 État 49
 
-   10 expression: expression . PLUS expression
-   11           | expression . MINUS expression
-   12           | expression . TIMES expression
-   13           | expression . DIV expression
-   14           | expression . OR expression
-   15           | expression . AND expression
-   18           | expression . LT expression
-   19           | expression . LE expression
-   20           | expression . GT expression
-   21           | expression . GE expression
-   22           | expression . EQ expression
-   23           | expression . DIFF expression
-   23           | expression DIFF expression .  [PLUS, MINUS, TIMES, DIV, OR, AND, RPAR, SEMICOLON, THEN, DO, LT, LE, GT, GE, EQ, DIFF]
+    5 statement: IF expression THEN statement .  [$end, IDENTIFIER, IF, ELSE, WHILE]
+    6          | IF expression THEN statement . ELSE statement
 
-    PLUS   décalage et aller à l'état 21
-    MINUS  décalage et aller à l'état 22
-    TIMES  décalage et aller à l'état 23
-    DIV    décalage et aller à l'état 24
-    OR     décalage et aller à l'état 25
-    AND    décalage et aller à l'état 26
-    LT     décalage et aller à l'état 28
-    LE     décalage et aller à l'état 29
-    GT     décalage et aller à l'état 30
-    GE     décalage et aller à l'état 31
-    EQ     décalage et aller à l'état 32
-    DIFF   décalage et aller à l'état 33
+    ELSE  décalage et aller à l'état 51
 
-    PLUS      [réduction par utilisation de la règle 23 (expression)]
-    MINUS     [réduction par utilisation de la règle 23 (expression)]
-    TIMES     [réduction par utilisation de la règle 23 (expression)]
-    DIV       [réduction par utilisation de la règle 23 (expression)]
-    OR        [réduction par utilisation de la règle 23 (expression)]
-    AND       [réduction par utilisation de la règle 23 (expression)]
-    LT        [réduction par utilisation de la règle 23 (expression)]
-    LE        [réduction par utilisation de la règle 23 (expression)]
-    GT        [réduction par utilisation de la règle 23 (expression)]
-    GE        [réduction par utilisation de la règle 23 (expression)]
-    EQ        [réduction par utilisation de la règle 23 (expression)]
-    DIFF      [réduction par utilisation de la règle 23 (expression)]
-    $défaut  réduction par utilisation de la règle 23 (expression)
+    ELSE      [réduction par utilisation de la règle 5 (statement)]
+    $défaut  réduction par utilisation de la règle 5 (statement)
 
 
 État 50
