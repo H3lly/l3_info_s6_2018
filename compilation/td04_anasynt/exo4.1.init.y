@@ -13,6 +13,9 @@ int yyerror(char *s);
 %left OR AND LT LE GT GE EQ DIFF
 %right LPAR
 %left RPAR
+%right IF THEN
+%right ELSE
+%left SEMICOLON
 %nonassoc NOT
 
 
