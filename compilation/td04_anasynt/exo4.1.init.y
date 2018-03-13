@@ -8,6 +8,12 @@ extern int yylex();
 int yyerror(char *s);
 %}
 
+%left PLUS MINUS
+%left TIMES DIV
+%left OR AND
+%right LPAR
+%left RPAR
+
 %start S
 %token IDENTIFIER AFF SEMICOLON IF THEN ELSE WHILE DO INTEGER PLUS MINUS TIMES DIV OR AND NOT LT LE GT GE EQ DIFF LPAR RPAR
 
