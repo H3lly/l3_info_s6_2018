@@ -92,6 +92,11 @@ node* createNode(int x, int y, double cost, double score, node* parent){
   return n;
 }
 
+int nodeCompare(const void* n1, const void* n2){
+  if( ((node*)n1)->score - ((node*)n2)->score > 0 ) return 1;
+  if( ((node*)n1)->score == ((node*)n2)->score > 0 ) return 0;
+  return -1;
+}
 
 void A_star(grid G, heuristic h){
   ;;;
