@@ -82,19 +82,19 @@ node* createNode(int x, int y, double cost, double score, node* parent){
   node* n = malloc(sizeof(node));
   if(n==NULL){
     fprintf(stderr, "Not enought memory.\n");
-    return 1;
+    return;
   }
   n->pos.x = x;
   n->pos.y = y;
   n->cost = cost;
   n->score = score;
-  n->parent = parent;
+  n->parent = (node*)(parent);
   return n;
 }
 
 int nodeCompare(const void* n1, const void* n2){
-  if( ((node*)n1)->score - ((node*)n2)->score > 0 ) return 1;
-  if( ((node*)n1)->score == ((node*)n2)->score > 0 ) return 0;
+  if( (((node*)n1)->score - ((node*)n2)->score) > 0 ) return 1;
+  if( (((node*)n1)->score == ((node*)n2)->score) > 0 ) return 0;
   return -1;
 }
 
@@ -107,15 +107,14 @@ void A_star(grid G, heuristic h){
   // P (couleur différente).
 
   
-  node start = createNode(G.start.x, G.start.y, 0, h(G.start, G.end, &G), NULL); //on créé le point de départ
-  node **P P=malloc(G.X*G.y*sizeof(node*)); //on créé P
+  node *start = createNode(G.start.x, G.start.y, 0, h(G.start, G.end, &G), NULL); //on créé le point de départ
+  node **P =malloc(G.X*G.Y*sizeof(node*)); //on créé P
   int P_len = 0; //servira d'indice pour P
-  heap Q = heap_create(4*G.x*G.Y-2*(G.X+G.Y), nodeCompare); //on créé Q
+  heap Q = heap_create(4*G.X*G.Y-2*(G.X+G.Y), nodeCompare); //on créé Q
   heap_add(Q, start); //on ajoute le point de départ dans Q
   G.mark[start->pos.x][start->pos.y]=M_FRONT; //on marque start comme étant dans Q
 
-
-  while(!heap_empty(Q)){ //tant que le tas n'est pas vide (tant qu'on a pas parcourus toutes les nodes)
+  while(heap_empty(Q)>0){ //tant que le tas n'est pas vide (tant qu'on a pas parcourus toutes les nodes)
     node *u = heap_pop(Q); //on récupére le sommet dont le chemin déjà parcourus est le min de ts les sommets de Q
                            // comme Q est un tas min, on a pas besoin de calculer le min
                            // on enlève par la même occasion u de Q
@@ -131,7 +130,7 @@ void A_star(grid G, heuristic h){
 
     if(u->pos.x==G.end.x && u->pos.y == G.end.y){
       while(u->parent!=NULL){
-	u = u->parent;
+	u = (node *)(u->parent);
 	G.mark[u->pos.x][u->pos.y] = M_PATH;
 	drawGrid(G);
       }
@@ -141,26 +140,30 @@ void A_star(grid G, heuristic h){
       heap_destroy(Q);
       return;
     }
+    int u_x = u->pos.x;
+    int u_y = u->pos.y;
+    for(int i=-1 ; i<=1; ++i){
+      for(int j=-1 ; j<=1 ; ++j){
+	position pos;
+	pos.x = u_x+i;
+	pos.y = u_y+j;
+	if(G.mark[pos.x][pos.y] == M_USED) continue;
+	if(G.value[pos.x][pos.y] == V_WALL) continue;
 
-
-    //pour toutes les nodes n de G voisins de u
-       //blabal
-          //on créé position p;
-          //p.x = u->pos.x;
-          //p.y = u->pos.y;
-          //si n est dans P
-             //on CONTINUE
-          //si n est un mur, CONTINUE
-
-          //double c= cout[u] + poids de u (affiché dans variables.h, ce sont les sommets qui ont un poids 
-          //on les mark tous comme étant dans Q
-          //on créé un nouveau node à partir de u
-          //on ajoute u dans le tas
-    //on dessine la grille
-    
-  //on affiche l'erreur
-    
+	double c = u->cost + weight[G.value[pos.x][pos.y]];
+	G.mark[pos.x][pos.y] = M_FRONT;
+	heap_add(Q, createNode(pos.x, pos.y, c, c+h(pos, G.end, &G), u));
+	drawGrid(G);
+      }
+    }
+    drawGrid(G);
   }
+  fprintf(stderr, "No path found.\n");
+  for(int i=0; i<P_len; i++) free(P[i]);
+  free(P);
+  heap_destroy(Q);
+  return;
+}
   
   
   
@@ -204,7 +207,6 @@ void A_star(grid G, heuristic h){
   // devenus inutiles.
   //
   ;;;
-}
 
 
 // constantes à initialiser avant init_SDL_OpenGL()
