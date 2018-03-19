@@ -78,22 +78,8 @@ double weight[]={
 // noeud de coordonnées (i,j) qui passe dans le tas Q vous pourrez
 // mettre G.mark[i][j] = M_FRONT.
 
-node* createNode(int x, int y, double cost, double score, node* parent){
-  node* n = malloc(sizeof(node));
-  if(n==NULL){
-    fprintf(stderr, "Not enought memory.\n");
-    return 1;
-  }
-  n->pos.x = x;
-  n->pos.y = y;
-  n->cost = cost;
-  n->score = score;
-  n->parent = parent;
-  return n;
-}
-
-
 void A_star(grid G, heuristic h){
+  
   ;;;
   // Pensez à dessiner la grille avec drawGrid(G) à chaque fois que
   // possible, par exemple, lorsque vous ajoutez un sommet à P mais
