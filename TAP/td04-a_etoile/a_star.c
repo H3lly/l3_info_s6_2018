@@ -99,23 +99,83 @@ int nodeCompare(const void* n1, const void* n2){
 }
 
 void A_star(grid G, heuristic h){
-  ;;;
   // Pensez à dessiner la grille avec drawGrid(G) à chaque fois que
   // possible, par exemple, lorsque vous ajoutez un sommet à P mais
   // aussi lorsque vous reconstruisez le chemin à la fin de la
   // fonction. Lorsqu'un sommet passe dans Q vous pourrez le marquer
   // M_FRONT (dans son champs .mark) pour le distinguer des sommets de
   // P (couleur différente).
-  ;;;
+
+  
+  node start = createNode(G.start.x, G.start.y, 0, h(G.start, G.end, &G), NULL); //on créé le point de départ
+  node **P P=malloc(G.X*G.y*sizeof(node*)); //on créé P
+  int P_len = 0; //servira d'indice pour P
+  heap Q = heap_create(4*G.x*G.Y-2*(G.X+G.Y), nodeCompare); //on créé Q
+  heap_add(Q, start); //on ajoute le point de départ dans Q
+  G.mark[start->pos.x][start->pos.y]=M_FRONT; //on marque start comme étant dans Q
+
+
+  while(!heap_empty(Q)){ //tant que le tas n'est pas vide (tant qu'on a pas parcourus toutes les nodes)
+    node *u = heap_pop(Q); //on récupére le sommet dont le chemin déjà parcourus est le min de ts les sommets de Q
+                           // comme Q est un tas min, on a pas besoin de calculer le min
+                           // on enlève par la même occasion u de Q
+
+    if(G.mark[u->pos.x][u->pos.y]==M_USED){//si le sommet est dans P (aka si le sommet à déja été parcourus)
+      free(u);//on le libere u (vu qu'on va pas l'utiliser
+      continue;//on reprends la boucle au début sans faire le suite
+    }
+    int P_len = 0;
+    P[P_len] = u;
+    P_len++;
+    G.mark[u->pos.x][u->pos.y] = M_USED;
+
+    if(u->pos.x==G.end.x && u->pos.y == G.end.y){
+      while(u->parent!=NULL){
+	u = u->parent;
+	G.mark[u->pos.x][u->pos.y] = M_PATH;
+	drawGrid(G);
+      }
+      for(int i=0 ; i<P_len ; ++i) free(P[i]);
+      free(P);
+      while(!heap_empty(Q)) free(heap_pop(Q));
+      heap_destroy(Q);
+      return;
+    }
+
+
+    //pour toutes les nodes n de G voisins de u
+       //blabal
+          //on créé position p;
+          //p.x = u->pos.x;
+          //p.y = u->pos.y;
+          //si n est dans P
+             //on CONTINUE
+          //si n est un mur, CONTINUE
+
+          //double c= cout[u] + poids de u (affiché dans variables.h, ce sont les sommets qui ont un poids 
+          //on les mark tous comme étant dans Q
+          //on créé un nouveau node à partir de u
+          //on ajoute u dans le tas
+    //on dessine la grille
+    
+  //on affiche l'erreur
+    
+  }
+  
+  
+  
   // Après avoir extrait un noeud de Q, il ne faut pas le détruire,
   // sous peine de ne plus pouvoir reconstruire le chemin trouvé! Vous
   // pouvez réfléchir à une solution simple pour libérer tous les
   // noeuds devenus inutiles à la fin de la fonction. Une fonction
   // createNode() peut simplifier votre code.
-  ;;;
+  
   // Les bords de la grille sont toujours constitués de murs (V_WALL) ce
   // qui évite d'avoir à tester la validité des indices des positions
   // (sentinelle).
+
+
+  
   ;;;
   ;;;
   // Améliorations quand vous aurez fini:
