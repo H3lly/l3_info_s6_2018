@@ -1,10 +1,8 @@
-/* td4.1.l*/
+
 %{
-/*
-pas de #include "exo4.1.tab.h"
-*/
+
 %}
-/* NB: il manque IF THEN ELSE WHILE DO */
+
 %option nounput noinput
 %%
 [A-Za-z][A-Za-z0-9]* {return IDENTIFIER;}

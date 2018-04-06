@@ -113,7 +113,6 @@ static double value(point *V, int n, int *P){
 }
 
 static double tsp_brute_force(point *V, int n, int *Q){
-
   int *P = malloc(n*sizeof(int));
   for(int i=0; i<n; ++i)P[i] = i;
     double travel = value(V, n, P);
@@ -121,16 +120,18 @@ static double tsp_brute_force(point *V, int n, int *Q){
   while(NextPermutation(P, n)){
     if(value(V, n, P)<travel){
       travel = value(V, n, P);
-      for(int i=0 ; i<n ; ++i) Q[i]=P[i];
+      for(int i=0 ; i<n ; ++i)
+        Q[i]=P[i];
     }
-  free(P); 
-  return travel;
+    free(P); 
+    return travel;
+  }
 }
 
-static void descending_bubble_sorting(int *T, int n){
-  for(int i=n-1; i>=0; --1){
+void descending_bubble_sorting(int *T, int n){
+  for(int i=n-1; i>=0; --i){
     for(int j=0; j<i; ++j){
-      if(T[j+1]>t[j]){
+      if(T[j+1]>T[j]){
         int tmp = T[j+1];
         T[j+1] = T[j];
         T[j] = tmp;
@@ -142,7 +143,7 @@ static void descending_bubble_sorting(int *T, int n){
 static void MaxPermutation(int *P, int n, int k){
 	///04213, k=1 (indice 0)
   // -> 04321
-  int tmp = malloc((n-k)*sizeof(int));
+  int *tmp = malloc((n-k)*sizeof(int));
   for(int i=k, j=0; i<n ; i++, j++) tmp[j]=P[i];
     //on a transféré la partie à ordonner dans tmp
     descending_bubble_sorting(tmp, n-k);

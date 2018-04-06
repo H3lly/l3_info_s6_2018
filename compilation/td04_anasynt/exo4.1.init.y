@@ -4,6 +4,7 @@
 %{
 #include  <stdio.h>
 #include  <ctype.h>
+#include "exo4.1.init.tab.h"
 extern int yylex();
 int yyerror(char *s);
 %}
@@ -61,7 +62,7 @@ expression:
 	;
 
 %%
-#include "exo4.1.init.h"
+//#include "exo4.1.init.tab.h"
 
 int yyerror(char *s){
   fprintf( stderr, "*** ERROR: %s\n", s );
