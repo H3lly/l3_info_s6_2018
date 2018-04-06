@@ -133,7 +133,13 @@ static void MaxPermutation(int *P, int n, int k){
 }
 
 static double value_opt(point *V, int n, int *P,double w){
-	// ...
+	double val_opt = 0.0;
+  for(int i=0 ; i<n-1 ; ++i){
+    val_opt += dist(V[P[i]], V[P[i+1]]);
+    if(val_opt>w)
+      return -(i+1);
+  }
+  val_opt+= dist(V[P[n-1]], V[P[0]]);
 	return 0;
 }
 
