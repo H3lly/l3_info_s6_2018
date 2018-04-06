@@ -99,18 +99,32 @@ static point* generatePoints(int n, int X, int Y) {
 }
 
 static double dist(point A, point B){
-	// ...
-	return 0;
+	double dx = A.x-B.x;
+  double dy = A.y-B.y;
+  return sqrt(dx*dx+dy*dy);
 }
 
 static double value(point *V, int n, int *P){
-	// ...
-	return 0;
+  double val = 0.0;
+  for(int i=0 ; i<n-1 ; ++i)
+    val += dist(V[P[i]], V[P[i+1]]);
+  val+= dist(V[P[n-1]], V[P[0]]);
+  return val;
 }
 
 static double tsp_brute_force(point *V, int n, int *Q){
-	// ...
-	return 0;
+
+  int *P = malloc(n*sizeof(int));
+  for(int i=0; i<n; ++i)P[i] = i;
+    double travel = value(V, n, P);
+
+  while(NextPermutation(P, n)){
+    if(value(V, n, P)<travel){
+      travel = value(V, n, P);
+      for(int i=0 ; i<n ; ++i) Q[i]=P[i];
+    }
+  free(P); 
+  return travel;
 }
 
 static void MaxPermutation(int *P, int n, int k){
@@ -150,7 +164,7 @@ int main(int argc, char *argv[]) {
   for(int i=0; i<n; i++) P[i]=i; // utile pour drawTour()
   drawTour(V, n, NULL); // dessine seulement les points
 
-  {
+{
     TopChrono(1); // départ du chrono 1
     double w = tsp_brute_force(V,n,P);
     char *s = TopChrono(1); // s=durée
