@@ -123,7 +123,6 @@ void A_star(grid G, heuristic h){
       free(u);//on le libere u (vu qu'on va pas l'utiliser
       continue;//on reprends la boucle au début sans faire le suite
     }
-    int P_len = 0;
     P[P_len] = u;
     P_len++;
     G.mark[u->pos.x][u->pos.y] = M_USED;
