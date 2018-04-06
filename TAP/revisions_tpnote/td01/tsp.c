@@ -127,9 +127,30 @@ static double tsp_brute_force(point *V, int n, int *Q){
   return travel;
 }
 
+static void descending_bubble_sorting(int *T, int n){
+  for(int i=n-1; i>=0; --1){
+    for(int j=0; j<i; ++j){
+      if(T[j+1]>t[j]){
+        int tmp = T[j+1];
+        T[j+1] = T[j];
+        T[j] = tmp;
+      }
+    }
+  }
+}
+
 static void MaxPermutation(int *P, int n, int k){
-	// ...
-	return;
+	///04213, k=1 (indice 0)
+  // -> 04321
+  int tmp = malloc((n-k)*sizeof(int));
+  for(int i=k, j=0; i<n ; i++, j++) tmp[j]=P[i];
+    //on a transféré la partie à ordonner dans tmp
+    descending_bubble_sorting(tmp, n-k);
+
+  for (int i=k,j=0; i<n ; ++i, ++j)
+    P[i]=tmp[j];
+  free(tmp);
+  return;
 }
 
 static double value_opt(point *V, int n, int *P,double w){
@@ -140,7 +161,7 @@ static double value_opt(point *V, int n, int *P,double w){
       return -(i+1);
   }
   val_opt+= dist(V[P[n-1]], V[P[0]]);
-	return 0;
+  return 0;
 }
 
 static double tsp_brute_force_opt(point *V, int n, int *Q){
