@@ -4,12 +4,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#ifdef DEBUG
-#define DBG(fmt, args...) printf("%s:%s:%d "fmt, __FILE__, __FUNCTION__, __LINE__, args)
-#else
-#define DBG(fmt, args...) 
-#endif
-
 int lengthOfInt(int num){
 	int length = 0;
 	while(num!=0){
@@ -18,13 +12,6 @@ int lengthOfInt(int num){
 	}
 	return length;
 }
-/*
-
-1234
-x_plus  = 34
-x_moins = 12
-
-*/
 int multiply(int x, int y){
 	if(x<10) return x*y;
 	int n = lengthOfInt(x);
@@ -36,20 +23,15 @@ int multiply(int x, int y){
 	x_less = x_plus = y_less = y_plus = 0;
 
 	for(int i=0; i<n/2; ++i){
-		x_less = x_less*10 + tmpx%10;
-		y_less = y_less*10 + tmpy%10;
+		x_less = x_less + (tmpx%10)*pow(10,i);
+		y_less = y_less + (tmpy%10)*pow(10,i);
 		tmpy = tmpy/10;
 		tmpx = tmpx/10;
-		printf("x = %d, y = %d\n", x_less, y_less);
-		printf("tmpx = %d\n\n", tmpx);
 	}
 
-	tmpx = x;
-	tmpy = y;
-
 	for(int i=0; i<n/2; ++i){
-		x_plus = x_plus*10 + tmpx%10;
-		y_plus = y_plus*10 + tmpy%10;
+		x_plus = x_plus + tmpx%10*pow(10,i);
+		y_plus = y_plus + tmpy%10*pow(10,i);
 		tmpy = tmpy/10;
 		tmpx = tmpx/10;
 	}
@@ -65,13 +47,6 @@ int multiply(int x, int y){
 int main(void){
     int x = 1234;
     int y = 9876;
-
-    
-    /*if (getn(x) != getn(y)) {
-            printf("Number of digits for x and y should be the same! \n");
-            exit(1);
-    }*/
-
-    printf("%d * %d = %d \n You should get 12186984 !", x, y, multiply(x, y));
+    printf("%d * %d = %d \nYou should get 12186984 !\n", x, y, multiply(x, y));
     return 0;
 }
