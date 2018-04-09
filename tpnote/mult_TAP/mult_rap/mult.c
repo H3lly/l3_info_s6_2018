@@ -42,6 +42,7 @@ int multiply(int x, int y){
 	int p4 = multiply(x_less, y_less);
 	int a = p2 + p3;
 
+	printf("p1 = %d, p2 = %d, p3 = %d, p4 = %d, a = %d.\n", p1, p2, p3, p4, a);
 	return p1*pow(10,n)+a*pow(10,n/2)+p4;
 }
 int main(void){
@@ -50,3 +51,10 @@ int main(void){
     printf("%d * %d = %d \nYou should get 12186984 !\n", x, y, multiply(x, y));
     return 0;
 }
+
+/* p1 = 9, p4 = 16, a = 26.
+p1 = 7, p4 = 12, a = 20.
+p1 = 27, p4 = 32, a = 60.
+p1 = 21, p4 = 24, a = 46.
+p1 = 1176, p4 = 2584, a = 4244.
+*/
