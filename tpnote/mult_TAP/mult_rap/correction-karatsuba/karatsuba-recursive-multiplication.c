@@ -2,8 +2,13 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+/* THIS FILE WAS MADE BY RAPHAEL DRUON
+   PLEASE  CHECK HIS GITHUB : https://github.com/norips */
 
-/* from https://github.com/sangeeths/stanford-algos-1/blob/master/karatsuba-recursive-multiplication.c */
+/*
+   from https://github.com/sangeeths/stanford-algos-1/blob/master/karatsuba-recursive-multiplication.c
+*/
+
 /* 
 compilation commnad:
 gcc karatsuba-recursive-multiplication.c -lm -pedantic -Wall -Wno-variadic-macros 
